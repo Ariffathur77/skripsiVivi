@@ -1,0 +1,133 @@
+* { box-sizing: border-box; font-family: Arial, sans-serif; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #b9d6ff 0%, #d6e7ff 45%, #b7c8ff 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wrap { width: 100%; padding: 24px; display:flex; justify-content:center; }
+.card {
+  width: 420px;
+  background: rgba(255,255,255,0.92);
+  border-radius: 16px;
+  padding: 22px 22px 18px;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.10);
+}
+h1 { margin: 0 0 6px; font-size: 26px; }
+.sub { margin: 0 0 18px; color: #5b6b7b; }
+label { display:block; margin: 10px 0 6px; font-weight: 600; color:#34495e; }
+input, select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #d0d7de;
+  outline: none;
+}
+input:focus {
+  border-color: #2f6fed;
+  box-shadow: 0 0 0 3px rgba(47,111,237,0.12);
+}
+button {
+  margin-top: 14px;
+  width: 100%;
+  padding: 11px 12px;
+  border: 0;
+  border-radius: 10px;
+  background: #2f6fed;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 15px;
+}
+button:hover { filter: brightness(0.95); }
+
+/* Pesan error */
+.error {
+  background: #ffeef0;
+  border: 1px solid #f5aab5;
+  color: #b91c1c;
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin-bottom: 14px;
+  font-size: 14px;
+}
+
+/* Pesan sukses */
+.success {
+  background: #edfaf1;
+  border: 1px solid #6dd98c;
+  color: #166534;
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin-bottom: 14px;
+  font-size: 14px;
+}
+
+/* Link navigasi antar form */
+.form-link {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 14px;
+  color: #5b6b7b;
+}
+.form-link a {
+  color: #2f6fed;
+  font-weight: 600;
+  text-decoration: none;
+}
+.form-link a:hover { text-decoration: underline; }
+
+/* Password wrapper dengan icon eye */
+.pw-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.pw-wrap input {
+  padding-right: 42px;
+}
+.eye-btn {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  width: auto;
+  display: flex;
+  align-items: center;
+  color: #9aabb8;
+  outline: none;
+}
+.eye-btn:hover { color: #2f6fed; filter: none; }
+.eye-btn.active { color: #2f6fed; }
+.eye-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Badge role di form register */
+.role-info {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f0f6ff;
+  border-radius: 10px;
+  padding: 10px 14px;
+}
+.role-badge {
+  background: #2f6fed;
+  color: white;
+  border-radius: 6px;
+  padding: 3px 10px;
+  font-size: 13px;
+  white-space: nowrap;
+}
+.role-note {
+  color: #5b6b7b;
+  font-size: 13px;
+}

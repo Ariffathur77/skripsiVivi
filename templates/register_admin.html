@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daftar Admin - Dashboard MBG</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+</head>
+<body>
+  <div class="bg"></div>
+
+  <div class="card">
+    <h1>Daftar Akun Admin</h1>
+    <p class="sub">Registrasi akun dengan hak akses administrator</p>
+
+    {% if error %}
+      <div class="error">{{ error }}</div>
+    {% endif %}
+
+    <form method="POST" action="/login/admin">
+      <label>Username</label>
+      <input name="username" placeholder="Minimal 3 karakter" required minlength="3">
+
+      <label>Password</label>
+      <div class="pw-wrap">
+        <input id="pw-admin" name="password" type="password" placeholder="Minimal 4 karakter" required minlength="4">
+        <button type="button" class="eye-btn" onclick="togglePw('pw-admin', this)" tabindex="-1" aria-label="Tampilkan password">
+          <svg class="eye-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+            <circle cx="12" cy="12" r="3"></circle>
+          </svg>
+        </button>
+      </div>
+
+      <label>Konfirmasi Password</label>
+      <div class="pw-wrap">
+        <input id="pw-admin-confirm" name="confirm_password" type="password" placeholder="Ulangi password" required>
+        <button type="button" class="eye-btn" onclick="togglePw('pw-admin-confirm', this)" tabindex="-1" aria-label="Tampilkan konfirmasi password">
+          <svg class="eye-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+            <circle cx="12" cy="12" r="3"></circle>
+          </svg>
+        </button>
+      </div>
+
+      <label>Kunci Admin</label>
+      <div class="pw-wrap">
+        <input id="pw-secret" name="admin_secret" type="password" placeholder="Masukkan kunci khusus admin" required>
+        <button type="button" class="eye-btn" onclick="togglePw('pw-secret', this)" tabindex="-1" aria-label="Tampilkan kunci admin">
+          <svg class="eye-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+            <circle cx="12" cy="12" r="3"></circle>
+          </svg>
+        </button>
+      </div>
+
+      <div class="role-info">
+        <span class="role-badge" style="background:#e63946;">Role: <b>Admin</b></span>
+        <span class="role-note">Memerlukan kunci khusus untuk mendaftar</span>
+      </div>
+
+      <button type="submit">Daftar sebagai Admin</button>
+    </form>
+
+    <div class="form-link">
+      Kembali ke <a href="/login">halaman login</a>
+    </div>
+  </div>
+
+<script>
+function togglePw(inputId, btn) {
+  var input = document.getElementById(inputId);
+  var isHidden = input.type === 'password';
+  input.type = isHidden ? 'text' : 'password';
+  btn.classList.toggle('active', isHidden);
+}
+</script>
+</body>
+</html>

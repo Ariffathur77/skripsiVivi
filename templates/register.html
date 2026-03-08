@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daftar - Dashboard MBG</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+</head>
+<body>
+  <div class="bg"></div>
+
+  <div class="card">
+    <h1>Daftar Akun</h1>
+    <p class="sub">Buat akun baru untuk akses dashboard MBG</p>
+
+    {% if error %}
+      <div class="error">{{ error }}</div>
+    {% endif %}
+
+    <form method="POST" action="/register">
+      <label>Username</label>
+      <input name="username" placeholder="Minimal 3 karakter" required minlength="3">
+
+      <label>Password</label>
+      <div class="pw-wrap">
+        <input id="pw-reg" name="password" type="password" placeholder="Minimal 4 karakter" required minlength="4">
+        <button type="button" class="eye-btn" onclick="togglePw('pw-reg', this)" tabindex="-1" aria-label="Tampilkan password">
+          <svg class="eye-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+            <circle cx="12" cy="12" r="3"></circle>
+          </svg>
+        </button>
+      </div>
+
+      <label>Konfirmasi Password</label>
+      <div class="pw-wrap">
+        <input id="pw-confirm" name="confirm_password" type="password" placeholder="Ulangi password" required>
+        <button type="button" class="eye-btn" onclick="togglePw('pw-confirm', this)" tabindex="-1" aria-label="Tampilkan konfirmasi password">
+          <svg class="eye-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+            <circle cx="12" cy="12" r="3"></circle>
+          </svg>
+        </button>
+      </div>
+
+      <div class="role-info">
+        <span class="role-badge">Role: <b>User</b></span>
+        <span class="role-note">Akun baru otomatis sebagai User</span>
+      </div>
+
+      <button type="submit">Daftar</button>
+    </form>
+
+    <div class="form-link">
+      Sudah punya akun? <a href="/login">Login di sini</a>
+    </div>
+  </div>
+<script>
+function togglePw(inputId, btn) {
+  var input = document.getElementById(inputId);
+  var isHidden = input.type === 'password';
+  input.type = isHidden ? 'text' : 'password';
+  btn.classList.toggle('active', isHidden);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+{
+  "xlsx_path": "uploads/excel/HASIL_WLC_MBG.xlsx",
+  "shp_path": "uploads/shp/HASIL_WLC_MBG/Provinsi_Sumatera_Utara-KAB_KOTA_PL.shp",
+  "key_col": "kab_kota",
+  "name_col_data": "kab_kota",
+  "last_updated": 1772982886
+}

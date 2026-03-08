@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Upload Data - Admin</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+  <style>
+    .error { background:#ffecec; color:#a00000; padding:10px; border-radius:10px; margin-bottom:10px; }
+    .hint { margin-top:14px; color:#5b6b7b; font-size: 13px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Upload Data (Admin)</h1>
+    <p class="sub">Upload Excel hasil WLC dan paket shapefile (shp+shx+dbf+prj)</p>
+
+    {% if error %}
+      <div class="error">{{ error }}</div>
+    {% endif %}
+
+    <form method="POST" action="/admin/upload" enctype="multipart/form-data">
+      <label>Key kolom di SHP (contoh: kab_kota)</label>
+      <input name="key_col" value="kab_kota" required>
+
+      <label>Kolom nama kab/kota di Excel (contoh: kab_kota)</label>
+      <input name="name_col_data" value="kab_kota" required>
+
+      <label>File Excel (xlsx/xls/csv)</label>
+      <input type="file" name="excel" accept=".xlsx,.xls,.csv" required>
+
+      <label>Paket Shapefile (pilih SEMUA: .shp .shx .dbf .prj)</label>
+      <input type="file" name="shp_files" multiple accept=".shp,.shx,.dbf,.prj" required>
+
+      <button type="submit">Upload & Simpan</button>
+    </form>
+
+    <div class="hint">
+      Setelah upload, kembali ke dashboard lalu klik <b>Refresh Data</b>.
+    </div>
+  </div>
+</body>
+</html>
