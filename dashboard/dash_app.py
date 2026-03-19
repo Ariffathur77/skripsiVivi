@@ -283,6 +283,27 @@ def create_dash_app(
                 ),
 
                 # =========================
+                # RINGKASAN HASIL
+                # =========================
+                html.Div(
+                    [
+                        html.H5("Ringkasan Hasil", className="mt-3 mb-2"),
+                        html.P(
+                            "Berdasarkan hasil perhitungan indeks kemiskinan menggunakan indikator BPS (P0, P1, dan P2), "
+                            "dari total 33 kabupaten/kota di Provinsi Sumatera Utara, diperoleh 11 daerah prioritas tinggi, "
+                            "11 daerah prioritas sedang, dan 11 daerah prioritas rendah untuk penerima Program MBG.",
+                            className="mb-2",
+                        ),
+                        html.P(
+                            "Wilayah dengan prioritas tertinggi didominasi oleh daerah di Kepulauan Nias, seperti Nias Utara, "
+                            "Nias Barat, dan Nias Selatan, yang memiliki skor kemiskinan relatif lebih tinggi dibanding daerah lainnya.",
+                            className="text-muted mb-3",
+                        ),
+                    ],
+                    className="bg-light p-3 rounded",
+                ),
+
+                # =========================
                 # ROW PETA (md=7) + TABEL+KETERANGAN (md=5)
                 # =========================
                 dbc.Row(
