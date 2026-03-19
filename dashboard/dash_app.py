@@ -287,7 +287,7 @@ def create_dash_app(
                 # =========================
                 html.Div(
                     [
-                        html.H5("Ringkasan Hasil", className="mt-3 mb-2"),
+                        html.H5("Ringkasan Hasil", className="mb-2"),
                         html.P(
                             "Berdasarkan hasil perhitungan indeks kemiskinan menggunakan indikator BPS (P0, P1, dan P2), "
                             "dari total 33 kabupaten/kota di Provinsi Sumatera Utara, diperoleh 11 daerah prioritas tinggi, "
@@ -300,7 +300,7 @@ def create_dash_app(
                             className="text-muted mb-3",
                         ),
                     ],
-                    className="bg-light p-3 rounded",
+                    className="bg-light p-3 rounded mt-4",
                 ),
 
                 # =========================
