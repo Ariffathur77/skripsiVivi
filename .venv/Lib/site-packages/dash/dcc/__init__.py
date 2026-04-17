@@ -13,7 +13,7 @@ from .express import (  # noqa: F401, E402
     send_string,
 )
 
-__all__ = _components + [
+__all__ = _components + [  # type: ignore[reportUnsupportedDunderAll]
     "send_bytes",
     "send_data_frame",
     "send_file",
@@ -121,6 +121,11 @@ _js_dist.extend(
             ).format(__version__),
             "namespace": "dash",
             "dynamic": True,
+        },
+        {
+            "dev_package_path": "dcc/proptypes.js",
+            "dev_only": True,
+            "namespace": "dash",
         },
     ]
 )
